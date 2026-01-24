@@ -1,0 +1,17 @@
+STATISTIQUES DU MATCH
+=====================
+
+Nombre de manches jouées : 2
+Nombre total de tours   : 20
+
+TETES RAMASSEES :
+ - Joueur 1: 15 têtes
+
+SCORES PAR MANCHE :
+Fin de manche ! Scores = J1:9  
+Fin de manche ! Scores = J1:15  
+
+SCORE FINAL :
+Fin de manche ! Scores = J1:15  
+
+FIN DU RAPPORT
