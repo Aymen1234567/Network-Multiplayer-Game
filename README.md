@@ -1,73 +1,68 @@
-6 qui prend — Network Multiplayer Game (C)
+# ⚡ 6 qui prend – Network Multiplayer Game (C)
 
-Implementation of the card game “6 qui prend” (6 Nimmt! / Take 5) as a multiplayer client–server application using TCP sockets in C.
-This project was developed as part of the Systèmes et Réseaux course (L3 Informatique) at Université Bourgogne Europe.
+Implementation of the card game **“6 qui prend!” (Take 5)** as a **multiplayer client–server application** using TCP sockets in **C**.  
 
-📌 Project Overview
+📚 Developed as part of the **Systèmes et Réseaux** course (L3 Informatique) at **Université Bourgogne Europe**.  
 
-The goal of this project is to apply systems and network programming concepts through a real multiplayer game:
+---
 
-TCP socket communication
+## 🧩 Project Overview
 
-Client–server architecture
+This project demonstrates **systems and network programming concepts** through a real multiplayer game:
 
-Thread synchronization (mutex)
+- **TCP socket communication**  
+- **Client–server architecture**  
+- **Thread synchronization** (`mutex`)  
+- **Process coordination**  
+- **Log analysis and statistics generation**  
+- Optional **PDF report generation**  
 
-Process coordination
+Players can be **human clients** or **AI-controlled robots**, all interacting via a **central server**.
 
-Log analysis and statistics generation
+---
 
-Optional PDF report generation
+## 🧠 Game Description
 
-Players can be human clients or controlled robots, all interacting through a central server.
+**6 qui prend!** is a strategic card game created by **Wolfgang Kramer**:
 
-🧠 Game Description
+- 104 cards numbered **1 to 104**  
+- Each card has **1–7 penalty points** (bull heads)  
+- Players place cards into **rows**  
+- Placing the **6th card** of a row forces the player to **collect penalty points**  
+- The objective is to finish the game with the **lowest score**
 
-6 qui prend is a strategic card game created by Wolfgang Kramer.
+---
 
-104 cards numbered from 1 to 104
+## 🏗️ System Architecture
 
-Each card has 1 to 7 penalty points (bull heads)
+The project uses a **client–server model**:
 
-Players place cards into rows
-
-Placing the 6th card of a row forces the player to collect penalty points
-
-The objective is to finish with the lowest score
-
-🏗️ System Architecture
-
-The project follows a client–server model:
-
-Server
+### 🖥️ Server
 Handles:
 
-Game logic
+- Game logic  
+- Card distribution  
+- Turn synchronization  
+- Score calculation  
+- Logging  
+- Optional PDF report generation  
 
-Card distribution
+### 🎮 Clients
 
-Turn synchronization
+- `joueur_humain.c` → **Human player** (terminal interface)  
+- `joueur_robot.c` → **AI player** (automatic decisions)  
 
-Score calculation
+### 📊 Statistics Tool
 
-Logging
+- `stats.sh` → analyzes **game logs** and generates **statistics** (terminal or PDF)
 
-Optional PDF generation
+> All communications use **TCP sockets** to ensure reliability.
 
-Clients
+---
 
-joueur_humain.c → human player (terminal interface)
+## 📂 Project Structure
 
-joueur_robot.c → AI player (automatic decisions)
-
-Statistics Tool
-
-stats.sh → analyzes game logs and generates statistics (terminal or PDF)
-
-All communications use TCP sockets to ensure reliability.
-
-
-📂 Project Structure
+```text
 .
 ├── serveur.c          # Game server (core logic)
 ├── joueur_humain.c    # Human player client
@@ -77,6 +72,8 @@ All communications use TCP sockets to ensure reliability.
 ├── log_jeu.txt        # Game log (generated at runtime)
 └── README.md
 
+
+
 ⚙️ Compilation
 
 Use gcc on Linux / Unix systems:
@@ -84,7 +81,6 @@ Use gcc on Linux / Unix systems:
 gcc serveur.c -o serveur -lpthread
 gcc joueur_humain.c -o joueur_humain
 gcc joueur_robot.c -o joueur_robot
-
 
 ▶️ How to Run
 1️⃣ Start the server
@@ -106,3 +102,6 @@ Robot player:
 
 
 You can mix human and robot players freely.
+
+
+
